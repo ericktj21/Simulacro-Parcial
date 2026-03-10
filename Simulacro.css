@@ -1,0 +1,74 @@
+/* ================= VARIABLES ================= */
+:root {
+    --bg: #f4f6f9; --bg-alt: #ffffff; --txt: #333; 
+    --pri: #0056b3; --pri-h: #003d82; --borde: #ddd; 
+    --shd: 0 4px 6px rgba(0,0,0,0.05);
+}
+body.dark {
+    --bg: #121212; --bg-alt: #1e1e1e; --txt: #f0f0f0; 
+    --pri: #4da3ff; --pri-h: #80bdff; --borde: #333; 
+    --shd: 0 4px 6px rgba(0,0,0,0.4);
+}
+
+/* ================= BASE ================= */
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+body { background: var(--bg); color: var(--txt); scroll-behavior: smooth; transition: 0.3s; line-height: 1.6; }
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+.mt-1 { margin-top: 1rem; } .mb-1 { margin-bottom: 1rem; } .mt-2 { margin-top: 2rem; }
+.w-100 { width: 100%; display: block; text-align: center; }
+.center-text { text-align: center; max-width: 800px; margin: auto; }
+
+/* ================= NAVEGACIÓN ================= */
+.nav { position: sticky; top: 0; background: var(--bg-alt); padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--borde); z-index: 10; }
+.nav b { color: var(--pri); font-size: 1.2rem; }
+.links { display: flex; gap: 1.5rem; font-weight: bold; }
+.links a:hover { color: var(--pri); }
+.icon-btn { background: none; border: none; font-size: 1.5rem; cursor: pointer; }
+
+/* ================= COMPONENTES REUTILIZABLES ================= */
+.sec { padding: 4rem 2rem; max-width: 1000px; margin: auto; }
+.bg-alt { background: var(--bg-alt); border: 1px solid var(--borde); border-width: 1px 0; }
+.title { text-align: center; color: var(--pri); margin-bottom: 1.5rem; font-size: 2rem; }
+
+.btn { background: var(--pri); color: #fff; border: 2px solid var(--pri); padding: 0.6rem 1.2rem; border-radius: 5px; cursor: pointer; transition: 0.3s; font-size: 1rem; font-weight: bold; }
+.btn:hover, .btn.active { background: var(--pri-h); border-color: var(--pri-h); }
+.btn-out { background: transparent; color: var(--pri); }
+
+.grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; }
+.box { background: var(--bg-alt); padding: 1.5rem; border-radius: 8px; border: 1px solid var(--borde); box-shadow: var(--shd); }
+
+/* ================= SECCIONES ESPECÍFICAS ================= */
+.hero { text-align: center; padding-top: 6rem; }
+.avatar { width: 180px; height: 180px; border-radius: 50%; border: 4px solid var(--pri); object-fit: cover; margin-bottom: 1rem; }
+.hero h2 { color: var(--txt); font-weight: normal; margin-bottom: 1rem; }
+
+.box ul li { padding: 0.5rem; border-bottom: 1px solid var(--borde); }
+.box ul li:last-child { border-bottom: none; }
+
+.filters { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+.filters .btn { background: transparent; color: var(--txt); border-radius: 20px; }
+.filters .btn.active { background: var(--pri); color: #fff; }
+
+.card { background: var(--bg-alt); padding: 1.5rem; border-radius: 8px; border: 1px solid var(--borde); text-align: center; box-shadow: var(--shd); transition: 0.3s; }
+.card:hover { transform: translateY(-5px); border-color: var(--pri); }
+.card h3 { color: var(--pri); margin-bottom: 0.5rem; }
+
+/* Formulario */
+input, textarea { width: 100%; padding: 0.8rem; margin-bottom: 1rem; border: 1px solid var(--borde); border-radius: 5px; background: var(--bg); color: var(--txt); outline: none; }
+input:focus, textarea:focus { border-color: var(--pri); }
+.success { background: #28a745; color: white; padding: 1rem; border-radius: 5px; text-align: center; font-weight: bold; margin-top: 1rem; }
+.map { width: 100%; height: 200px; object-fit: cover; border-radius: 5px; }
+
+/* ================= FOOTER ================= */
+.foot { text-align: center; padding: 2rem; background: var(--bg-alt); border-top: 1px solid var(--borde); position: relative; }
+.foot-links { display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 1.5rem; font-weight: bold; }
+.foot-links a:hover { color: var(--pri); }
+.btn-top { position: absolute; right: 2rem; bottom: 1.5rem; background: var(--pri); color: #fff; border: none; width: 40px; height: 40px; border-radius: 5px; cursor: pointer; }
+
+/* ================= RESPONSIVO ================= */
+@media (max-width: 768px) {
+    .links { display: none; }
+    .foot-links { flex-direction: column; gap: 0.8rem; }
+}

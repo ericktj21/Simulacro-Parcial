@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio - Simulacro</title>
+    <link rel="stylesheet" href="simulacro.css">
+</head>
+<body>
+    <nav class="nav">
+        <b>Mi Portafolio</b>
+        <div class="links">
+            <a href="#inicio">Inicio</a>
+            <a href="#sobre-mi">Sobre mí</a>
+            <a href="#habilidades">Habilidades</a>
+            <a href="#contacto">Contacto</a>
+        </div>
+        <button id="theme" class="icon-btn">🌙</button>
+    </nav>
+
+    <header id="inicio" class="hero sec">
+        <img src="imgProfile.jpg" alt="Foto de perfil" class="avatar">
+        <h1>Erick Mauricio Toloza Jara</h1>
+        <h2>Administrador de proyectos informaticos</h2>
+        <p>Apasionado por la tecnología, creando soluciones web eficientes y escalables con un enfoque en la experiencia de usuario y buenas prácticas.</p>
+    </header>
+
+    <section id="sobre-mi" class="sec bg-alt">
+        <h2 class="title">Sobre Mí</h2>
+        <div class="center-text">
+            <p>Soy una persona proactiva, en constante aprendizaje y en busca de nuevos retos. <span id="more" hidden>Me encanta trabajar en equipo, explorar nuevas tecnologías y aplicar patrones de diseño para mejorar la calidad del código en cada proyecto que participo.</span></p>
+            <button id="btn-more" class="btn">Leer más</button>
+        </div>
+        
+        <div class="grid-2 mt-2">
+            <div class="box">
+                <h3>Datos Personales</h3>
+                <ul>
+                    <li><strong>Nombre:</strong> Erick Toloza</li>
+                    <li><strong>Edad:</strong> 20 años</li>
+                    <li><strong>País/Ciudad:</strong> Colombia, Cúcuta</li>
+                    <li><strong>Ocupación:</strong> Administrador de proyectos informaticos</li>
+                    <li><strong>Pasatiempo:</strong> Jugar videojuegos</li>
+                </ul>
+            </div>
+            <div class="box">
+                <h3>Datos Curiosos</h3>
+                <ul>
+                    <li>Me gusta aprender cosas nuevas.</li>
+                    <li>Disfruto saliendo con amigos.</li>
+                    <li>Siempre tengo un proyecto personal en mente.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="habilidades" class="sec">
+        <h2 class="title">Habilidades e Intereses</h2>
+        
+        <div id="filters" class="filters">
+            <button class="btn active" data-f="all">Todos</button>
+            <button class="btn" data-f="tec">Técnicos</button>
+            <button class="btn" data-f="per">Personales</button>
+        </div>
+        <p class="center-text mt-1">Mostrando <b id="cnt">6</b> tarjetas</p>
+        
+        <div class="grid mt-2" id="cards">
+            <div class="card" data-c="tec">
+                <h3>💻 HTML & CSS</h3><p>Creación de interfaces responsivas y atractivas.</p>
+            </div>
+            <div class="card" data-c="tec">
+                <h3>⚙️ JavaScript</h3><p>Lógica dinámica y manipulación del DOM.</p>
+            </div>
+            <div class="card" data-c="tec">
+                <h3>🚀 Git & GitHub</h3><p>Control de versiones y trabajo colaborativo.</p>
+            </div>
+            <div class="card" data-c="per">
+                <h3>🧩 Resolución</h3><p>Capacidad para solucionar problemas complejos.</p>
+            </div>
+            <div class="card" data-c="per">
+                <h3>🤝 Trabajo en Equipo</h3><p>Comunicación asertiva y apoyo grupal.</p>
+            </div>
+            <div class="card" data-c="per">
+                <h3>📚 Aprendizaje</h3><p>Facilidad y disposición para aprender rápido.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contacto" class="sec bg-alt">
+        <h2 class="title">Contacto</h2>
+        <div class="grid-2">
+            <form id="form" class="box">
+                <input type="text" id="nombre" placeholder="Nombre completo" required>
+                <input type="email" placeholder="Correo electrónico válido" required>
+                <input type="text" placeholder="Asunto (Mín. 5 caracteres)" minlength="5" required>
+                <textarea placeholder="Escribe tu mensaje (Mín. 20 caracteres)" minlength="20" rows="5" required></textarea>
+                <button class="btn w-100">Enviar Mensaje</button>
+                <div id="msg" class="success" hidden>¡Mensaje enviado con éxito!</div>
+            </form>
+            
+            <div class="box">
+                <h3>Redes y Ubicación</h3>
+                <div class="mt-1 mb-1">
+                   <a href="https://github.com/ericktj21" target="_blank" class="btn btn-out w-100 mb-1">GitHub</a>
+                   <a href="https://www.linkedin.com/in/erick-mauricio-toloza-jara-b0a458389/" target="_blank" class="btn btn-out w-100 mb-1">LinkedIn</a>
+                   <a href="https://www.instagram.com/erick.mt0/" target="_blank" class="btn btn-out w-100">Instagram</a>
+                 </div>
+                <img src="img/mapa.jpg" alt="Mapa de mi ubicación" class="map">
+            </div>
+        </div>
+    </section>
+
+    <footer class="foot">
+        <div class="foot-links">
+            <a href="#inicio">Inicio</a>
+            <a href="#sobre-mi">Sobre mí</a>
+            <a href="#habilidades">Habilidades</a>
+            <a href="#contacto">Contacto</a>
+        </div>
+        <p>&copy; 2026 Erick | Creado para el simulacro</p>
+        <button id="top" class="btn-top">⬆️</button>
+    </footer>
+
+    <script>
+        const $ = id => document.getElementById(id);
+        const $$ = sel => document.querySelectorAll(sel);
+
+        // Tema Oscuro
+        $('theme').onclick = () => document.body.classList.toggle('dark');
+        
+        // Botón Leer Más
+        $('btn-more').onclick = e => {
+            $('more').hidden = !$('more').hidden;
+            e.target.textContent = $('more').hidden ? 'Leer más' : 'Leer menos';
+        };
+
+        // Filtros de Tarjetas
+        $('filters').onclick = e => {
+            if(!e.target.dataset.f) return;
+            $$('#filters .btn').forEach(b => b.classList.remove('active'));
+            e.target.classList.add('active');
+            
+            let count = 0;
+            $$('.card').forEach(card => {
+                let match = e.target.dataset.f === 'all' || card.dataset.c === e.target.dataset.f;
+                card.style.display = match ? 'block' : 'none';
+                if(match) count++;
+            });
+            $('cnt').textContent = count;
+        };
+
+        // Formulario
+        $('form').onsubmit = e => {
+            e.preventDefault();
+            $('msg').textContent = `¡Gracias ${$('nombre').value}, mensaje enviado con éxito!`;
+            $('msg').hidden = false;
+            setTimeout(() => $('msg').hidden = true, 4000);
+            e.target.reset();
+        };
+
+        // Botón Volver Arriba
+        $('top').onclick = () => window.scrollTo(0,0);
+    </script>
+</body>
+</html>
